@@ -8,10 +8,18 @@ html {
   background-color: #4b4b4b;
 }
 
+#container{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #svgBox {
-  width: 600px;
-  height: 600px;
-  margin: 4vh auto;
+  width: 80vh;
+  height: 80vh;
+
   border: 5px solid #6b6b6b;
   border-radius: 10px;
   svg {
@@ -19,6 +27,30 @@ html {
     height: 100%;
     overflow: visible;
     background-color: #dbdbdb;
+  }
+}
+
+#controllerBox{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 40px;
+  left: 40px;
+  background: rgb(6, 78, 12);
+  padding: 20px;
+  opacity: 0.1;
+  transition: opacity 0.2s ease;
+  &:hover{
+    opacity: 1;
+  }
+  #randomWordsBtn{
+    margin-left: 20px;
+    width: 100px;
+    height: auto;
+    background: rgb(7, 55, 11);
+
   }
 }
 
@@ -41,8 +73,8 @@ html {
 
 .rect-text {
   fill: #1f1f1f;
-  font-weight: 700;
-  font-size: 1rem;
+  font-weight: 500;
+  font-size: 0.8rem;
 }
 
 .rect {
