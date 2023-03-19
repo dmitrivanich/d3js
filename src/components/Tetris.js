@@ -13,11 +13,14 @@ export default function Tetris() {
   const [someWords, setSomeWords] = useState([])
   const tetrisData = useMemo(() => (
     coordMatrix(rowsNumber)
-  ), [rowsNumber])
+  ), [rowsNumber, someWords])
 
   const setWordsFromServer = useCallback(() => {
-    getWordsFromServer(12).then((words) => {
+    getWordsFromServer(10).then((words) => {
       setSomeWords(words)
+      console.log('====================================');
+      console.log(words);
+      console.log('====================================');
     })
   }, [])
 
@@ -42,6 +45,9 @@ export default function Tetris() {
         </div>
         <div>
           <button id='randomWordsBtn' onClick={setWordsFromServer}>Randomize words</button>
+          <button onClick={() => {
+            setSomeWords(someWords.splice(0, someWords.length - 1))
+          }}>Remove last</button>
         </div>
       </div>
 
